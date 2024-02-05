@@ -44,7 +44,7 @@ const toshibaTv = {
 
 let tableArray = [samsungTv,lgTv,haierTv,toshibaTv]
 
-//2- 
+//2- coloring the ratings red or green 
 
 const rate = document.querySelectorAll(".rating")
 
@@ -128,3 +128,12 @@ deleteButtons.forEach(function(button) {
         button.closest('tr').remove();
     });
 });
+
+const buyButtons = document.querySelectorAll(".buyBtn");
+
+buyButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        window.open("buy.html","_blank")
+    });
+});
+
