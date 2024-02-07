@@ -48,7 +48,6 @@ let tableArray = [samsungTv,lgTv,haierTv,toshibaTv]
 
 const rate = document.querySelectorAll(".rating")
 
-
 rate.forEach(row => {
     const rating = row.textContent
     const fullRow = row.closest('tr')
@@ -130,10 +129,25 @@ deleteButtons.forEach(function(button) {
 });
 
 const buyButtons = document.querySelectorAll(".buyBtn");
+const selectedStoreName = document.getElementById('storeName')
 
 buyButtons.forEach(function(button) {
     button.addEventListener("click", function() {
+        const row = button.closest('.tabelRow')
+        const storeName = row.querySelector('td:nth-child(3)').textContent
+        const price = row.querySelector('th:nth-child(6)').innerText; 
+
+        console.log(storeName);
+        console.log(price);
+        // localStorage.setItem("storeName", storeName)
+        // localStorage.setItem("price", price) 
+        selectedStoreName.textContent = storeName
+     
         window.open("buy.html","_blank")
     });
 });
 
+
+   
+        
+        
